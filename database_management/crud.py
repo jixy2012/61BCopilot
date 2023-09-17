@@ -32,6 +32,7 @@ def add_problem(db: Session, problem_to_add: ProblemCreate) -> ExamProblem:
             raise ValueError(f"The following topics do not exist in the database: {', '.join(missing_topics)}")
 
         db_new_problem = ExamProblem(
+            number=problem_to_add.number,
             semester=problem_to_add.semester,
             difficulty=problem_to_add.difficulty,
             professor=problem_to_add.professor,

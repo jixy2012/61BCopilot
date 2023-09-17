@@ -8,12 +8,14 @@ from typing import List, Optional
 from pydantic import BaseModel
 
 class ProblemBase(BaseModel):
+    number: int
     semester: str
     difficulty: str
     professor: str
     text: str
 
 class ProblemCreate(ProblemBase):
+    number: int
     semester: str
     difficulty: str
     professor: str

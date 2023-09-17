@@ -20,6 +20,7 @@ class ExamProblem(Base):
     __tablename__ = 'exam_problems'
 
     id = Column(Integer, primary_key=True, index=True) # unique id of a problem
+    number = Column(Integer)
     semester = Column(String(32), index=True) # semester
     difficulty = Column(String(32))
     professor = Column(Text) # the professor teaching the course. only one professor supported
