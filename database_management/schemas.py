@@ -15,11 +15,6 @@ class ProblemBase(BaseModel):
     text: str
 
 class ProblemCreate(ProblemBase):
-    number: int
-    semester: str
-    difficulty: str
-    professor: str
-    text: str
     topics: Optional[List[str]] = []
 
 class Problem(ProblemBase):

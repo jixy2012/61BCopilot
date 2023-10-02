@@ -18,7 +18,8 @@ def add_topic(db: Session, topic_to_add: TopicCreate) -> ExamTopic:
         return db_new_topic
     except IntegrityError:
         db.rollback()
-        return ValueError(f"Duplicate topic value {topic_to_add.topic} cannot be added to topics table.")
+        raise ValueError(f"Duplicate topic value {topic_to_add.topic} cannot be added to topics table.")
+    
     
 
 def add_problem(db: Session, problem_to_add: ProblemCreate) -> ExamProblem:

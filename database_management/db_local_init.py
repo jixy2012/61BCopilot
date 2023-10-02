@@ -2,6 +2,7 @@ from .database import engine
 from . import models
 from .models import Base
 
+
 def init_db():
     try:
         conn = engine.connect()
@@ -11,4 +12,3 @@ def init_db():
         print('fuck')
     Base.metadata.create_all(bind=engine)
 
-init_db()
